@@ -7,6 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Company {
+  id        String           @id @default(cuid())
+  name      String
+  createdAt DateTime         @default(now())
+  emissions EmissionRecord[]
+}
+
 model EmissionRecord {
   id          String   @id @default(cuid())
   electricity Float
@@ -19,5 +26,9 @@ model EmissionRecord {
   employees   Int
   total       Float
   createdAt   DateTime @default(now())
+
   userId      String
+  companyId   String
+
+  company     Company  @relation(fields: [companyId], references: [id])
 }
