@@ -8,9 +8,10 @@ datasource db {
 }
 
 model Company {
-  id        String           @id @default(cuid())
+  id        String   @id @default(cuid())
   name      String
-  createdAt DateTime         @default(now())
+  createdAt DateTime @default(now())
+
   emissions EmissionRecord[]
 }
 
@@ -27,8 +28,8 @@ model EmissionRecord {
   total       Float
   createdAt   DateTime @default(now())
 
-  userId      String
-  companyId   String
+  userId String
 
-  company     Company  @relation(fields: [companyId], references: [id])
+  companyId String
+  company   Company @relation(fields: [companyId], references: [id])
 }
