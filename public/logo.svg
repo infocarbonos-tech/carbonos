@@ -1,0 +1,7 @@
+<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="18" cy="20" r="14" fill="#10B981"></circle>
+  <path d="M18 10 C26 16 26 24 18 30 C10 24 10 16 18 10Z" fill="white"></path>
+  <text x="40" y="26" font-size="18" font-family="Inter, sans-serif" fill="#10B981" font-weight="600">
+    CarbonOS
+  </text>
+</svg>

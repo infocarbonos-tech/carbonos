@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model EmissionRecord {
+  id          String   @id @default(cuid())
+  electricity Float
+  diesel      Float
+  gas         Float
+  water       Float
+  travel      Float
+  waste       Float
+  purchase    Float
+  employees   Int
+  total       Float
+  createdAt   DateTime @default(now())
+  userId      String
+}
